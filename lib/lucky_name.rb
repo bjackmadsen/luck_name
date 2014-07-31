@@ -7,11 +7,9 @@ def lucky_name(name)
     "P" => 3, "Q" => 10, "R" => 1, "S" => 1, "T" => 1,
     "U" => 1, "V" => 4,  "W" => 4, "X" => 8, "Y" => 4,
     "Z" => 10}
-    letters.map! {|x| x = letter_val[x]}
-    if name.length.even?
-      first_half = name.slice(name.length/2 -1)
-      second_half = name.slice(name.size/2..-1)
-      first_half == second_half
-      true
-    end
-  end
+  letters.map! {|x| x = letter_val[x]}
+  first_half = letters.slice(0..(letters.length/2)-1)
+  second_half = letters.slice(-(letters.size/2)..-1)
+  first_half.reduce(:+) == second_half.reduce(:+)
+end
+
