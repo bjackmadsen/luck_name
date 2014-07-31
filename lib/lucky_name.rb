@@ -11,5 +11,6 @@ def lucky_name(name)
   first_half = letters.slice(0..(letters.length/2)-1)
   second_half = letters.slice(-(letters.size/2)..-1)
   first_half.reduce(:+) == second_half.reduce(:+)
-end
 
+end
+puts lucky_name('Brandon')
