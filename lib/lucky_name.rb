@@ -10,7 +10,7 @@ def lucky_name(name)
   letters.map! {|x| x = letter_val[x]}
   first_half = letters.slice(0..(letters.length/2)-1)
   second_half = letters.slice(-(letters.size/2)..-1)
-  first_half.reduce(:+) == second_half.reduce(:+)
+  first_half.inject(:+) == second_half.inject(:+)
 
 end
-puts lucky_name('Brandon')
+puts lucky_name("bops")
